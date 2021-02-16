@@ -38,9 +38,16 @@ img {
 }
 
 .container {
+	display: flex;
+	flex-direction: column;
 	max-width: 1000px;
 	margin: auto;
+	min-height: 100vh;
 	padding: 0 1.5rem 4rem;
+}
+
+.main {
+	flex: 1 0 auto;
 }
 
 .btn {
