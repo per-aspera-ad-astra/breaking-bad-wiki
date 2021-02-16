@@ -1,0 +1,52 @@
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+
+	@include screen(sm) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include screen(md) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	&-item {
+		border: 1px solid $color-primary;
+
+		&__inner {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		&__title {
+			background-color: $color-primary;
+			color: $color-secondary;
+			margin-bottom: 2rem;
+			font: 700 1.8rem $title-font-family;
+			text-align: center;
+			padding: 2rem 1.5rem;
+		}
+
+		&__list {
+			list-style: none;
+			margin: 0;
+			padding: 2rem 1.5rem;
+
+			li {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 5%;
+
+				&:not(:last-child) {
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+
+		&__bloquote {
+
+		}
+	}
+}

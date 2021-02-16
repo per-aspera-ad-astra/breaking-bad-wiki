@@ -1,0 +1,16 @@
+.random {
+	background-color: $color-secondary;
+	max-width: 320px;
+	padding: 1.5rem 1rem;
+	border: 1px solid $color-primary;
+
+	&__title {
+		margin-bottom: 1.5rem;
+		font: 700 2.2rem $title-font-family;
+		text-align: center;
+	}
+
+	&__body {
+		line-height: 1.5;
+	}
+}

@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+} from 'react-router-dom'
+import Header from './components/UI/Header'
+import CharacterSingle from './components/characters/CharacterSingle'
+import Home from './pages/Home'
+import Characters from './pages/Characters'
+import Episodes from './pages/Episodes'
+import Quotes from './pages/Quotes'
+import Deaths from './pages/Deaths'
+import './App.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+	return (
+		<Router>
+			<div className="container">
+				<Header />
+				<Switch>
+					<Route
+						exact
+						path="/"
+						component={Home}
+					/>
+					<Route
+						exact
+						path="/characters"
+						component={Characters}
+					/>
+					<Route
+						path="/characters/:id"
+						render={({match}) => {
+							const { id } = match.params
+							return <CharacterSingle id={id}/>
+						}}
+					/>
+					<Route path="/episodes">
+						<Episodes />
+					</Route>
+					<Route path="/quotes">
+						<Quotes />
+					</Route>
+					<Route path="/deaths">
+						<Deaths />
+					</Route>
+				</Switch>
+			</div>
+		</Router>
+
+	)
 }
 
-export default App;
+export default App

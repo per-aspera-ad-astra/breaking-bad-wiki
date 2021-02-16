@@ -1,0 +1,35 @@
+.navigation {
+	font: 700 1.8rem $title-font-family;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		margin-bottom: 2rem;
+
+		@include screen(md) {
+			margin-bottom: 0;
+		}
+
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+
+		a {
+			display: block;
+			padding: .5rem 1rem;
+			border: 1px solid #fff;
+			border-radius: 5px;
+
+			&.active {
+				background-color: #fff;
+				color: #24352c;
+			}
+		}
+	}
+}
